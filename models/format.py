@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -7,10 +7,9 @@ from database import Base
 class Format(Base):
     __tablename__ = "format"
 
-    id = Column(Integer, primary_key=True)
-    title = Column(String)
+    title = Column(String(length=50), primary_key=True)
 
-    types = relationship("Type")
+    project_types = relationship("ProjectType")
     projects = relationship("Project")
 
     def __repr__(self):

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -7,8 +7,7 @@ from database import Base
 class Level(Base):
     __tablename__ = "level"
 
-    id = Column(Integer, primary_key=True)
-    title = Column(String)
+    title = Column(String(length=50), primary_key=True)
 
     projects = relationship("Project")
 
