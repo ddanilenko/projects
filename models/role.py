@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -7,7 +7,8 @@ from database import Base
 class Role(Base):
     __tablename__ = "role"
 
-    title = Column(String(length=50), primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    title = Column(String(length=50))
 
     users = relationship(
         "User",

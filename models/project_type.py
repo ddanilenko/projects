@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -7,7 +7,8 @@ from database import Base
 class ProjectType(Base):
     __tablename__ = "project_type"
 
-    title = Column(String(length=50), primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    title = Column(String(length=50))
     format_title = Column(String, ForeignKey("format.title"))
 
     projects = relationship(

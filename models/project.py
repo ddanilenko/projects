@@ -2,10 +2,10 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import relationship
 
-from database import Base
+from models.base_model import BaseModel
 
 
-class Project(Base):
+class Project(BaseModel):
     __tablename__ = "project"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -27,7 +27,11 @@ class Project(Base):
         secondary="project_responsibility",
         back_populates="projects"
     )
+    project_votes = relationship(
+        "User",
+        secondary="user_project_votes",
+        back_populates="votes"
+    )
 
     def __repr__(self):
-        return f"This is the '{self.title}' project from {self.author} and it " \
-               f"has {self.status} status"
+        return f"This is the {self.title} project from {self.author} and it has {self.status} status"

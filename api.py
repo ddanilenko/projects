@@ -1,12 +1,11 @@
 from flask import Blueprint
 from flask_restful import Api
 
-from resources.project import ProjectsCollectionResource, ProjectViewResource, ProjectsResource
+from resources.project import ProjectViewResource, ProjectsResource
 
 projects = Blueprint("projects", __name__, url_prefix="/projects")
 api_projects = Api(projects)
-api_projects.add_resource(ProjectsResource, "/")
-api_projects.add_resource(ProjectsCollectionResource, "/list")
+api_projects.add_resource(ProjectsResource, "")
 api_projects.add_resource(ProjectViewResource, "/<id_>")
 
 materials = Blueprint("materials", __name__, url_prefix="/materials")

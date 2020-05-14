@@ -8,13 +8,7 @@ from alembic import context
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 from database import db_url
-from models.format import Format
-from models.level import Level
-from models.project import Project
-from models.role import Role
-from models.user import User
-from models.project_type import ProjectType
-from models.status import Status
+from models import *
 
 config = context.config
 
@@ -44,6 +38,11 @@ target_metadata = combine_metadata(
     Status.metadata,
     ProjectType.metadata,
     User.metadata,
+    UserProjectVotes.metadata,
+    UserRoles.metadata,
+    ProjectTypes.metadata,
+    ProjectResponsibility.metadata,
+
 )
 
 target_metadata = target_metadata
