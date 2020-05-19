@@ -42,3 +42,19 @@ class User(BaseModel):
 
     def __repr__(self):
         return f"{self.first_name} {self.last_name} from {self.city}"
+
+users = [{
+"first_name": "Daria",
+    "last_name": "Danylenko",
+    "email": "ddanilenko@ukr.net",
+    "password": "333",
+    "city": "Kyiv",
+    "district": "Kyiv city"
+},{
+"first_name": "Sergii",
+    "last_name": "sdfg",
+    "email": "dsfgdf@ukr.net",
+    "password": "333",
+    "city": "Kyiv",
+    "district": "Kyiv city"
+}]
