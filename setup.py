@@ -17,7 +17,7 @@ requirements = get_requirments(requirements_path)
 tests_require = get_requirments(test_requirements_path)
 
 setup(
-    name="tideas",
+    name="projects",
     version="1.0.0",
     install_requires=requirements,
     zip_safe=False,
