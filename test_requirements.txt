@@ -5,3 +5,5 @@ sqlalchemy_utils
 psycopg2
 passlib
 sqlalchemy_imageattach
+alembic
+python-dotenv
